@@ -1,0 +1,38 @@
+{
+  "name": "@idexal/idexalwork-cli",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "IdexalWork CLI — command-line interface for IdexalWork",
+  "bin": {
+    "idexalwork": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "compile": "bun build --compile --minify src/cli.ts --outfile dist/idexalwork",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Tests coming soon\" && exit 0"
+  },
+  "keywords": [
+    "idexalwork",
+    "cli",
+    "ai",
+    "agent"
+  ],
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idexal/idexalwork.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idexal/idexalwork/issues"
+  },
+  "homepage": "https://github.com/idexal/idexalwork#readme",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
