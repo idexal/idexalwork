@@ -1,20 +1,20 @@
 {
-  "name": "@idexal/idexalwork-installer",
+  "name": "@idexalwork/installer",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "type": "module",
-  "description": "IdexalWork Installer — Professional Wizard for Desktop + CLI installation",
+  "description": "IdexalWork desktop installer: resolves an install-link config, writes desktop bootstrap config, then downloads and installs the newest supported desktop app.",
+  "workspaces": [
+    "../../packages/install-config"
+  ],
   "scripts": {
     "dev": "bun run src/index.ts",
-    "compile": "bun build --compile --minify src/index.ts src/server-worker.ts --outfile dist/idexalwork-installer",
-    "test": "bun test"
+    "test": "bun test",
+    "compile": "bun build --compile --minify src/index.ts src/server-worker.ts --outfile dist/idexalwork-installer"
   },
   "dependencies": {
-    "webview-bun": "2.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.7.0"
-  },
-  "license": "AGPL-3.0"
+    "@idexalwork/install-config": "workspace:*",
+    "webview-bun": "2.4.0",
+    "zod": "4.3.6"
+  }
 }
